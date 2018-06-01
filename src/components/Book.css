@@ -1,9 +1,10 @@
 .book {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: flex-start;
- max-width: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 130px;
+  position: relative;
 }
 
 .book__title {
@@ -15,3 +16,11 @@
   font-size: 10px;
 }
 
+.book__image {
+  cursor: pointer;
+  transition: transform .3s ease-in-out;
+}
+
+.book:hover .book__status-selection {
+  width: 30px;
+}

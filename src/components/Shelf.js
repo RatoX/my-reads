@@ -1,22 +1,31 @@
 import './Shelf.css';
 import React from 'react';
 import Book from './Book';
-import StatusIcon from './StatusIcon';
+import ShelfIcon from './ShelfIcon';
 import PropTypes from "prop-types";
 
-function Shelf ({ title, books, statusIcon }) {
-  const statusIconClassName = `shelf__icon shelf__status-${statusIcon}`
+function Shelf ({ title, books, shelfIcon }) {
+  const statusIconClassName = `shelf__icon shelf__status-${shelfIcon}`
 
   return (
     <section className="shelf">
       <header className="shelf__title">
-        <StatusIcon className={statusIconClassName} status={statusIcon}></StatusIcon>
+        <ShelfIcon
+          className={statusIconClassName}
+          shelf={shelfIcon}>
+        </ShelfIcon>
         { title }
       </header>
       <ol className="shelf__books">
         { books.map((book) =>
           <li className="shelf__book" key={book.id}>
-            <Book id={book.id} title={book.title} imageLinks={book.imageLinks} authors={book.authors}></Book>
+            <Book
+              id={book.id}
+              title={book.title}
+              imageLinks={book.imageLinks}
+              shelf={book.shelf}
+              authors={book.authors}>
+            </Book>
           </li>
           )
         }
@@ -28,13 +37,13 @@ function Shelf ({ title, books, statusIcon }) {
 Shelf.propTypes = {
   title: PropTypes.string,
   books: PropTypes.array,
-  statusIcon: PropTypes.string,
+  shelfIcon: PropTypes.string,
 };
 
 Shelf.defaultProps = {
   title: '',
   books: [],
-  statusIcon: '',
+  shelfIcon: '',
 };
 
 export default Shelf;

@@ -16,3 +16,8 @@
 .my-shelf__sections {
   margin-top: 20px;
 }
+
+.my-shelf__information {
+  font-style: italic;
+  font-size: 10px;
+}

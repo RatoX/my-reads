@@ -1,8 +1,9 @@
 import './Book.css';
 import React from 'react';
 import PropTypes from "prop-types";
+import BookShelfSelection from './BookShelfSelection';
 
-function Book({ id, title, imageLinks, authors }) {
+function Book({ id, title, imageLinks, authors, shelf }) {
   const alt = `Cover image for: ${title}`
 
   return (
@@ -17,6 +18,10 @@ function Book({ id, title, imageLinks, authors }) {
           { authors.join(', ') }
         </small>
       </figcaption>
+      <BookShelfSelection
+        bookShelf={shelf}
+        className="book__status-selection">
+      </BookShelfSelection>
     </figure>
   )
 }
