@@ -1,0 +1,18 @@
+.my-shelf {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-shelf__header {
+  padding: 20px 0;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.my-shelf__sections {
+  margin-top: 20px;
+}

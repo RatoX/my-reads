@@ -1,0 +1,17 @@
+.book {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: flex-start;
+ max-width: 130px;
+}
+
+.book__title {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.book__authors {
+  font-size: 10px;
+}
+
