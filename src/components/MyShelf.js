@@ -38,9 +38,9 @@ class MyShelf extends Component {
       <section className="my-shelf">
         <header className="my-shelf__header">My Reads</header>
         <section className="my-shelf__sections">
-          <Shelf title="Currently Reading" books={ currentlyReading } />
-          <Shelf title="Want to Read" books={ wantToRead } />
-          <Shelf title="Read" books={ read } />
+          <Shelf statusIcon="currentlyReading" title="Currently Reading" books={ currentlyReading } />
+          <Shelf statusIcon="wantToRead" title="Want to Read" books={ wantToRead } />
+          <Shelf statusIcon="read" title="Read" books={ read } />
         </section>
       </section>
     )

@@ -20,3 +20,28 @@
 .shelf__book + .shelf__book {
   margin-left: 15px;
 }
+
+.shelf__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.shelf__icon {
+  width: 20px;
+  margin-right: 15px;
+}
+
+.shelf__status-currentlyReading {
+  fill: #9984D4;
+}
+
+.shelf__status-read {
+  fill: #0F4646;
+}
+
+.shelf__status-wantToRead {
+  fill: #B27C66;
+}
