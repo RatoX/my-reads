@@ -9,6 +9,11 @@ body {
   font-family: sans-serif;
 }
 
+main {
+  width: 100vw;
+  min-height: 100vh;
+}
+
 ol, ul {
 	list-style: none;
   padding: 0;

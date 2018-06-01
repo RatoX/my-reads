@@ -1,5 +1,6 @@
 import './Book.css';
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 
 function Book({ id, title, imageLinks, authors }) {
   const alt = `Cover image for: ${title}`
@@ -19,5 +20,18 @@ function Book({ id, title, imageLinks, authors }) {
     </figure>
   )
 }
+
+Book.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  imageLinks: PropTypes.object,
+  authors: PropTypes.array,
+};
+
+Book.defaultProps = {
+  title: '',
+  authors: [],
+  imageLinks: {},
+};
 
 export default Book;
