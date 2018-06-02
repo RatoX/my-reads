@@ -4,8 +4,14 @@ import Book from './Book';
 import ShelfIcon from './ShelfIcon';
 import PropTypes from "prop-types";
 
-function Shelf ({ title, books, shelfIcon }) {
+function Shelf ({ title, books, shelfIcon, onChangeBookShelf }) {
   const statusIconClassName = `shelf__icon shelf__status-${shelfIcon}`
+  const onBeforeUpdate = () => {
+    console.log('TROCANDO')
+  }
+  const onAfterUpdate = (book, newShelf) => {
+    onChangeBookShelf(book, newShelf)
+  }
 
   return (
     <section className="shelf">
@@ -24,7 +30,9 @@ function Shelf ({ title, books, shelfIcon }) {
               title={book.title}
               imageLinks={book.imageLinks}
               shelf={book.shelf}
-              authors={book.authors}>
+              authors={book.authors}
+              onBeforeUpdate={onBeforeUpdate}
+              onAfterUpdate={onAfterUpdate.bind(this, book)}>
             </Book>
           </li>
           )
@@ -38,12 +46,14 @@ Shelf.propTypes = {
   title: PropTypes.string,
   books: PropTypes.array,
   shelfIcon: PropTypes.string,
+  onChangeBookShelf: PropTypes.func,
 };
 
 Shelf.defaultProps = {
   title: '',
   books: [],
   shelfIcon: '',
+  onChangeBookShelf: () => {},
 };
 
 export default Shelf;

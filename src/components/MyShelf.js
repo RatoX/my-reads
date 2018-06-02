@@ -31,6 +31,14 @@ class MyShelf extends Component {
       })
   }
 
+  changeBookShelf(currentShelf, book, newShelf) {
+    this.setState((state) => {
+      state[currentShelf] = state[currentShelf].filter(x => x.id !== book.id)
+      state[newShelf] = state[newShelf].concat(book)
+      return state
+    })
+  }
+
   render () {
     const { wantToRead, currentlyReading, read } = this.state
 
@@ -42,15 +50,18 @@ class MyShelf extends Component {
           <Shelf
             shelfIcon="currentlyReading"
             title="Currently Reading"
-            books={ currentlyReading } />
+            books={ currentlyReading }
+            onChangeBookShelf={this.changeBookShelf.bind(this, 'currentlyReading')} />
           <Shelf
             shelfIcon="wantToRead"
             title="Want to Read"
-            books={ wantToRead } />
+            books={ wantToRead }
+            onChangeBookShelf={this.changeBookShelf.bind(this, 'wantToRead')} />
           <Shelf
             shelfIcon="read"
             title="Read"
-            books={ read } />
+            books={ read }
+            onChangeBookShelf={this.changeBookShelf.bind(this, 'read')} />
         </section>
       </section>
     )
