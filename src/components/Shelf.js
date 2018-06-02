@@ -31,6 +31,7 @@ class Shelf extends Component {
       this.setState({ loading: true })
     }
     const onAfterUpdate = (book, newShelf) => {
+      book.shelf = newShelf
       onChangeBookShelf(book, newShelf)
       this.setState({ loading: false })
     }
