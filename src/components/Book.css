@@ -21,10 +21,6 @@
   transition: transform .3s ease-in-out;
 }
 
-.book:hover .book__status-selection {
-  width: 30px;
-}
-
 .book__sticky {
   position: absolute;
   top: 0;

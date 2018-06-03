@@ -29,6 +29,10 @@
   justify-content: space-around;
 }
 
+.shelf__book {
+  margin-top: 50px;
+}
+
 .shelf__book + .shelf__book {
   margin-left: 15px;
 }
