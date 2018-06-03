@@ -66,6 +66,7 @@ class Book extends Component {
         .update({ id }, newShelf)
         .then(() => {
           onAfterUpdate(newShelf)
+          this.setState({ shelf: newShelf })
         })
     }
 
