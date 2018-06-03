@@ -54,7 +54,11 @@ class Books extends Component {
           <ul className="books__list">
             { books.map((book) =>
               <li className="books__book" key={book.id}>
-                <Book id={book.id} title={book.title} imageLinks={book.imageLinks} authors={book.authors}></Book>
+                <Book
+                  id={book.id}
+                  title={book.title}
+                  imageLinks={book.imageLinks}
+                  authors={book.authors} />
               </li>
               )
             }

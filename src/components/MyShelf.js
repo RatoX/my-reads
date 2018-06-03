@@ -27,7 +27,6 @@ class MyShelf extends Component {
             currentlyReading.push(b)
         })
 
-
         this.setState({ books, wantToRead, currentlyReading, read })
       })
   }
