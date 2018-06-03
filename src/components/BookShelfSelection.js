@@ -1,6 +1,6 @@
-import './BookShelfSelection.css';
-import React from 'react';
-import ShelfIcon from './ShelfIcon';
+import './BookShelfSelection.css'
+import React from 'react'
+import ShelfIcon from './ShelfIcon'
 
 function BookShelfSelection ({ className, bookShelf, onSelectShelf }) {
   const bookShelfSelectionClassName = `book-shelf-selection ${className}`

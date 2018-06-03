@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
 const wantToRead = ({ className }) => (
   // https://use.fontawesome.com/releases/v5.0.13/svgs/solid/binoculars.svg
@@ -28,17 +28,17 @@ const icons = {
 }
 
 function ShelfIcon ({ className, shelf }) {
-  const icon = icons[shelf] || other;
+  const icon = icons[shelf] || other
 
-  return icon({ className });
+  return icon({ className })
 }
 
 ShelfIcon.propTypes = {
   shelf: PropTypes.string,
-};
+}
 
 ShelfIcon.defaultProps = {
   shelf: 'other',
-};
+}
 
 export default ShelfIcon

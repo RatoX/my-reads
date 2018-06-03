@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import MyShelf from './components/MyShelf';
-import Books from './components/Books';
-import { Route } from 'react-router-dom';
+import React, { Component } from 'react'
+import MyShelf from './components/MyShelf'
+import Books from './components/Books'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   render () {
@@ -14,8 +14,8 @@ class App extends Component {
           <Books></Books>
         )}/>
       </main>
-    );
+    )
   }
 }
 
-export default App;
+export default App

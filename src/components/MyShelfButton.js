@@ -1,7 +1,7 @@
 //https://use.fontawesome.com/releases/v5.0.13/svgs/solid/arrow-left.svg
-import './SearchButton.css';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import './SearchButton.css'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function MyShelfButton() {
   return (
@@ -15,4 +15,4 @@ function MyShelfButton() {
   )
 }
 
-export default MyShelfButton;
+export default MyShelfButton
