@@ -35,7 +35,11 @@ class MyShelf extends Component {
   changeBookShelf(currentShelf, book, newShelf) {
     this.setState((state) => {
       state[currentShelf] = state[currentShelf].filter(x => x.id !== book.id)
-      state[newShelf] = state[newShelf].concat(book)
+
+      if (state[newShelf]) {
+        state[newShelf] = state[newShelf].concat(book)
+      }
+
       return state
     })
   }

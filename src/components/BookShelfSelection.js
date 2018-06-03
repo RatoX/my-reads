@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 function BookShelfSelection ({ className, bookShelf, onSelectShelf }) {
   const bookShelfSelectionClassName = `book-shelf-selection ${className}`
   const iconClassName = 'book-shelf-selection__icon'
-  const shelfList = ['currentlyReading', 'wantToRead', 'read'].filter(i => i !== bookShelf)
+  const shelfList = ['currentlyReading', 'wantToRead', 'read', 'none'].filter(i => i !== bookShelf)
 
   return (
     <section className={bookShelfSelectionClassName}>

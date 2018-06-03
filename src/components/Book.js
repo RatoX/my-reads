@@ -25,13 +25,14 @@ class Book extends Component {
 
   state = {
     shelf: '',
+    loaded: false,
   }
 
   loadCurrentStatus () {
     BooksAPI
       .get(this.props.id)
       .then((book) => {
-        this.setState({ shelf: book.shelf })
+        this.setState({ shelf: book.shelf, loaded: true })
       })
   }
 
@@ -45,7 +46,7 @@ class Book extends Component {
 
   render () {
     const { id, title, imageLinks, authors, onBeforeUpdate, onAfterUpdate } = this.props
-    const { shelf } = this.state
+    const { shelf, loaded } = this.state
     const alt = `Cover image for: ${title}`
     const onSelectShelf = (newShelf) => {
       onBeforeUpdate()
@@ -80,10 +81,12 @@ class Book extends Component {
             { authors.join(', ') }
           </small>
         </figcaption>
-        <BookShelfSelection
-          bookShelf={shelf}
-          className='book__status-selection'
-          onSelectShelf={onSelectShelf} />
+        { loaded && (
+          <BookShelfSelection
+            bookShelf={shelf}
+            className='book__status-selection'
+            onSelectShelf={onSelectShelf} />
+        )}
       </figure>
     )
   }
