@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import * as BooksAPI from '../api/BooksAPI'
 import Book from './Book';
 import MyShelfButton from './MyShelfButton';
+import { DebounceInput } from 'react-debounce-input';
 
 class Books extends Component {
   state = {
@@ -36,13 +37,13 @@ class Books extends Component {
       <section className="books">
         <header className="books__header">
           <MyShelfButton></MyShelfButton>
-          <input
+          <DebounceInput
             className='books__search'
-            type='text'
             placeholder='Search'
+            minLength={3}
+            debounceTimeout={300}
             value={query}
-            onChange={(event) => this.updateQuery(event.target.value)}
-          />
+            onChange={(event) => this.updateQuery(event.target.value)} />
         </header>
         <section className="books__result">
           { query.length > 0 &&
