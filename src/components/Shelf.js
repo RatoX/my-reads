@@ -1,8 +1,9 @@
-import './Shelf.css';
+/* eslint-disable react/jsx-no-bind */
+import './Shelf.css'
 import React, { Component } from 'react'
-import Book from './Book';
-import ShelfIcon from './ShelfIcon';
-import PropTypes from "prop-types";
+import Book from './Book'
+import ShelfIcon from './ShelfIcon'
+import PropTypes from 'prop-types'
 
 class Shelf extends Component {
   static propTypes = {
@@ -31,28 +32,28 @@ class Shelf extends Component {
       this.setState({ loading: true })
     }
     const onAfterUpdate = (book, newShelf) => {
+      const currentShelf = book.shelf
       book.shelf = newShelf
-      onChangeBookShelf(book, newShelf)
+      onChangeBookShelf(currentShelf, book, newShelf)
       this.setState({ loading: false })
     }
 
-    let shelfClassName = `shelf`
+    let shelfClassName = 'shelf'
     if (loading) {
-     shelfClassName += ` ${shelfClassName}_loading`
+      shelfClassName += ` ${shelfClassName}_loading`
     }
 
     return (
       <section className={shelfClassName}>
-        <header className="shelf__title">
+        <header className='shelf__title'>
           <ShelfIcon
             className={statusIconClassName}
-            shelf={shelfIcon}>
-          </ShelfIcon>
+            shelf={shelfIcon} />
           { title }
         </header>
-        <ol className="shelf__books">
+        <ol className='shelf__books'>
           { books.map((book) =>
-            <li className="shelf__book" key={book.id}>
+            <li className='shelf__book' key={book.id}>
               <Book
                 id={book.id}
                 title={book.title}
@@ -60,15 +61,14 @@ class Shelf extends Component {
                 shelf={book.shelf}
                 authors={book.authors}
                 onBeforeUpdate={onBeforeUpdate}
-                onAfterUpdate={onAfterUpdate.bind(this, book)}>
-              </Book>
+                onAfterUpdate={onAfterUpdate.bind(this, book)} />
             </li>
-            )
+          )
           }
         </ol>
       </section>
-    );
+    )
   }
 }
 
-export default Shelf;
+export default Shelf

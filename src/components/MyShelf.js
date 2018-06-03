@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import './MyShelf.css'
 import React, { Component } from 'react'
 import Shelf from '../components/Shelf'
@@ -43,28 +44,28 @@ class MyShelf extends Component {
     const { wantToRead, currentlyReading, read } = this.state
 
     return (
-      <section className="my-shelf">
-        <header className="my-shelf__header">
-          <SearchButton></SearchButton>
-          <h1 className="my-shelf__title">My Reads</h1>
+      <section className='my-shelf'>
+        <header className='my-shelf__header'>
+          <SearchButton />
+          <h1 className='my-shelf__title'>My Reads</h1>
         </header>
-        <section className="my-shelf__sections">
-          <small className="my-shelf__information">select a book to change their status</small>
+        <section className='my-shelf__sections'>
+          <small className='my-shelf__information'>select a book to change their status</small>
           <Shelf
-            shelfIcon="currentlyReading"
-            title="Currently Reading"
-            books={ currentlyReading }
-            onChangeBookShelf={this.changeBookShelf.bind(this, 'currentlyReading')} />
+            shelfIcon='currentlyReading'
+            title='Currently Reading'
+            books={currentlyReading}
+            onChangeBookShelf={this.changeBookShelf.bind(this)} />
           <Shelf
-            shelfIcon="wantToRead"
-            title="Want to Read"
-            books={ wantToRead }
-            onChangeBookShelf={this.changeBookShelf.bind(this, 'wantToRead')} />
+            shelfIcon='wantToRead'
+            title='Want to Read'
+            books={wantToRead}
+            onChangeBookShelf={this.changeBookShelf.bind(this)} />
           <Shelf
-            shelfIcon="read"
-            title="Read"
-            books={ read }
-            onChangeBookShelf={this.changeBookShelf.bind(this, 'read')} />
+            shelfIcon='read'
+            title='Read'
+            books={read}
+            onChangeBookShelf={this.changeBookShelf.bind(this)} />
         </section>
       </section>
     )

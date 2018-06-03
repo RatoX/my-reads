@@ -1,9 +1,9 @@
 import './Books.css'
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import * as BooksAPI from '../api/BooksAPI'
-import Book from './Book';
-import MyShelfButton from './MyShelfButton';
-import { DebounceInput } from 'react-debounce-input';
+import Book from './Book'
+import MyShelfButton from './MyShelfButton'
+import { DebounceInput } from 'react-debounce-input'
 
 class Books extends Component {
   state = {
@@ -34,9 +34,9 @@ class Books extends Component {
     const { query, books } = this.state
 
     return (
-      <section className="books">
-        <header className="books__header">
-          <MyShelfButton></MyShelfButton>
+      <section className='books'>
+        <header className='books__header'>
+          <MyShelfButton />
           <DebounceInput
             className='books__search'
             placeholder='Search'
@@ -45,22 +45,22 @@ class Books extends Component {
             value={query}
             onChange={(event) => this.updateQuery(event.target.value)} />
         </header>
-        <section className="books__result">
+        <section className='books__result'>
           { query.length > 0 &&
-            <h2 className="books__title-result">
+            <h2 className='books__title-result'>
               { books.length } results for { query }
             </h2>
           }
-          <ul className="books__list">
+          <ul className='books__list'>
             { books.map((book) =>
-              <li className="books__book" key={book.id}>
+              <li className='books__book' key={book.id}>
                 <Book
                   id={book.id}
                   title={book.title}
                   imageLinks={book.imageLinks}
                   authors={book.authors} />
               </li>
-              )
+            )
             }
           </ul>
         </section>
@@ -69,4 +69,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Books

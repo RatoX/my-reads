@@ -8,11 +8,11 @@ class App extends Component {
     return (
       <main>
         <Route exact path='/' render={() => (
-          <MyShelf></MyShelf>
-        )}/>
+          <MyShelf />
+        )} />
         <Route exact path='/search' render={() => (
-          <Books></Books>
-        )}/>
+          <Books />
+        )} />
       </main>
     )
   }

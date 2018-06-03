@@ -1,21 +1,9 @@
-import './Book.css';
-import React, { Component } from 'react';
-import PropTypes from "prop-types";
-import BookShelfSelection from './BookShelfSelection';
-import ShelfIcon from './ShelfIcon';
+import './Book.css'
 import * as BooksAPI from '../api/BooksAPI'
-
-// function Book() {
-//   const loadCurrentStatus = () => {
-//     BooksAPI
-//       .get(id)
-//       .then((book) => {
-//         console.log(book)
-//       })
-//   }
-//
-//   loadCurrentStatus()
-// }
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import BookShelfSelection from './BookShelfSelection'
+import ShelfIcon from './ShelfIcon'
 
 class Book extends Component {
   static propTypes = {
@@ -25,7 +13,7 @@ class Book extends Component {
     authors: PropTypes.array,
     onBeforeUpdate: PropTypes.func,
     onAfterUpdate: PropTypes.func,
-  };
+  }
 
   static defaultProps = {
     title: '',
@@ -33,7 +21,7 @@ class Book extends Component {
     imageLinks: {},
     onBeforeUpdate: () => {},
     onAfterUpdate: () => {},
-  };
+  }
 
   state = {
     shelf: '',
@@ -48,7 +36,7 @@ class Book extends Component {
   }
 
   componentDidMount () {
-    this.loadCurrentStatus();
+    this.loadCurrentStatus()
   }
 
   validShelf (shelf) {
@@ -71,35 +59,34 @@ class Book extends Component {
     }
 
     return (
-      <figure className="book" key={ id }>
+      <figure className='book' key={id}>
         { this.validShelf(shelf) && (
-          <figure className="book__sticky">
+          <figure className='book__sticky'>
             <ShelfIcon
-              className="book__shelf"
-              shelf={shelf}>
-            </ShelfIcon>
+              className='book__shelf'
+              shelf={shelf} />
           </figure>
         )}
         <img
-          className="book__image"
-          src={ imageLinks.smallThumbnail }
-          alt={ alt } />
+          className='book__image'
+          src={imageLinks.smallThumbnail}
+          alt={alt} />
 
-        <figcaption className="book__information">
-          <h1 className="book__title">
+        <figcaption className='book__information'>
+          <h1 className='book__title'>
             { title }
           </h1>
-          <small className="book__authors">
+          <small className='book__authors'>
             { authors.join(', ') }
           </small>
         </figcaption>
         <BookShelfSelection
           bookShelf={shelf}
-          className="book__status-selection"
-          onSelectShelf={onSelectShelf}/>
+          className='book__status-selection'
+          onSelectShelf={onSelectShelf} />
       </figure>
     )
   }
 }
 
-export default Book;
+export default Book

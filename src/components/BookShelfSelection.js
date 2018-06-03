@@ -1,6 +1,7 @@
 import './BookShelfSelection.css'
 import React from 'react'
 import ShelfIcon from './ShelfIcon'
+import PropTypes from 'prop-types'
 
 function BookShelfSelection ({ className, bookShelf, onSelectShelf }) {
   const bookShelfSelectionClassName = `book-shelf-selection ${className}`
@@ -14,13 +15,24 @@ function BookShelfSelection ({ className, bookShelf, onSelectShelf }) {
           key={shelf}
           onClick={() => onSelectShelf(shelf)}>
           <ShelfIcon
-            className={iconClassName + ' ' + iconClassName+'-'+shelf }
-            shelf={shelf}>
-          </ShelfIcon>
+            className={iconClassName + ' ' + iconClassName+'-'+shelf}
+            shelf={shelf} />
         </figure>
       )}
     </section>
   )
+}
+
+BookShelfSelection.propTypes = {
+  className: PropTypes.string,
+  bookShelf: PropTypes.string,
+  onSelectShelf : PropTypes.func,
+}
+
+BookShelfSelection.defaultProps = {
+  className: '',
+  bookShelf: '',
+  onSelectShelf: () => {},
 }
 
 export default BookShelfSelection
