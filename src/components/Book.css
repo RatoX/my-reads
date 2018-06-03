@@ -19,6 +19,7 @@
 .book__image {
   cursor: pointer;
   transition: transform .3s ease-in-out;
+  max-width: 128px;
 }
 
 .book__sticky {

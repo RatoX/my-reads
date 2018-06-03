@@ -18,7 +18,9 @@ class Book extends Component {
   static defaultProps = {
     title: '',
     authors: [],
-    imageLinks: {},
+    imageLinks: {
+      smallThumbnail: 'http://www.51allout.co.uk/wp-content/uploads/2012/02/Image-not-found.gif'
+    },
     onBeforeUpdate: () => {},
     onAfterUpdate: () => {},
   }
