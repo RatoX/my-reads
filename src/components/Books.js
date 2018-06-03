@@ -9,19 +9,22 @@ class Books extends Component {
   state = {
     query: '',
     books: [],
+    loading: false,
   }
 
   updateQuery = (query) => {
     this.setState({ query: query })
 
     if (query.trim()) {
+      this.setState({ loading: true })
+
       BooksAPI
         .search(query)
         .then((books) => {
           if (!books.error) {
-            this.setState({ books })
+            this.setState({ books, loading: false })
           } else {
-            this.setState({ books: [] })
+            this.setState({ books: [], loading: false })
           }
         })
     } else {
@@ -31,7 +34,7 @@ class Books extends Component {
 
 
   render () {
-    const { query, books } = this.state
+    const { query, books, loading } = this.state
 
     return (
       <section className='books'>
@@ -46,7 +49,10 @@ class Books extends Component {
             onChange={(event) => this.updateQuery(event.target.value)} />
         </header>
         <section className='books__result'>
-          { query.length > 0 &&
+          { loading &&
+            <strong>Pesquisando...</strong>
+          }
+          { query.length > 0 && !loading &&
             <h2 className='books__title-result'>
               { books.length } results for { query }
             </h2>
