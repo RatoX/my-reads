@@ -2,6 +2,7 @@ import './MyShelf.css'
 import React, { Component } from 'react'
 import Shelf from '../components/Shelf'
 import * as BooksAPI from '../api/BooksAPI'
+import SearchButton from './SearchButton'
 
 class MyShelf extends Component {
   state = {
@@ -44,7 +45,10 @@ class MyShelf extends Component {
 
     return (
       <section className="my-shelf">
-        <header className="my-shelf__header">My Reads</header>
+        <header className="my-shelf__header">
+          <SearchButton></SearchButton>
+          <h1 className="my-shelf__title">My Reads</h1>
+        </header>
         <section className="my-shelf__sections">
           <small className="my-shelf__information">select a book to change their status</small>
           <Shelf

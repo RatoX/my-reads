@@ -2,6 +2,7 @@ import './Books.css'
 import React, { Component } from 'react';
 import * as BooksAPI from '../api/BooksAPI'
 import Book from './Book';
+import MyShelfButton from './MyShelfButton';
 
 class Books extends Component {
   state = {
@@ -22,6 +23,8 @@ class Books extends Component {
             this.setState({ books: [] })
           }
         })
+    } else {
+      this.setState({ books: [] })
     }
   }
 
@@ -32,6 +35,7 @@ class Books extends Component {
     return (
       <section className="books">
         <header className="books__header">
+          <MyShelfButton></MyShelfButton>
           <input
             className='books__search'
             type='text'

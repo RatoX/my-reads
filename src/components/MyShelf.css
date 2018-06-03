@@ -11,6 +11,13 @@
   width: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   text-align: center;
+  display: flex;
+  padding: 20px;
+}
+
+.my-shelf__title {
+  flex: 1 0 auto;
+  font-weight: normal;
 }
 
 .my-shelf__sections {

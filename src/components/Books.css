@@ -11,6 +11,16 @@
   width: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   text-align: center;
+  display: flex;
+  padding: 20px;
+}
+
+.books__search {
+  flex: 1 0;
+  margin-left: 10px;
+  border: none;
+  font-size: 13px;
+  color: black;
 }
 
 .books__result {
